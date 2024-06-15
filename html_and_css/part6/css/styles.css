@@ -5,9 +5,65 @@
  * Distributed under terms of the MIT license.
  */
 
-body {
-    box-sizing: border-box;
-	background: white;
-	color: black;
+.color-box {
+  color: blue;
+  background-color: yellow;
 }
 
+.border-box {
+  border: 5px solid black;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px gray;
+}
+
+.padding-margin-box {
+  border: 5px solid black;
+  padding: 40px;
+  margin: 80px;
+}
+.width-height-box {
+  background-color: green;
+  width: 500px;
+  height: 100vh;
+}
+
+.font-box {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.justify-box {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.justify-left-box {
+  background-color: red;
+  width: 50%;
+  height: 40vh;
+}
+
+.justify-right-box {
+  background-color: blue;
+  width: 15%;
+  height: 80vh;
+}
+
+.flex-wrap-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-wrap-item {
+  width: 30%;
+  height: 200px;
+  border: 1px solid brown;
+}
