@@ -20,7 +20,9 @@
   --s5: calc(var(--s0) * pow(var(--ratio), 5));
   --break-point: 600px;
   --max-width: 960px;
+  --max-height: 600px;
   box-sizing: border-box;
+  font-size: 23px;
 }
 
 * {
@@ -60,6 +62,7 @@ nav {
 .nav__resume {
   background-color: #384152;
   color: #ffffff;
+  font-weight: bold;
 }
 
 .nav__links {
@@ -67,20 +70,20 @@ nav {
 }
 
 .nav__links > * + * {
-  margin-left: var(--s0);
+  margin-left: var(--s1);
 }
 
 .main-visual {
   margin-top: 0;
   padding-left: 0;
   padding-right: 0;
-  height: 600px;
+  height: var(--max-height);
   min-width: 100%;
 }
 
 /* stack in main */
 main > * + * {
-  margin-top: var(--s2);
+  margin-top: var(--s4);
 }
 
 section {
@@ -92,6 +95,7 @@ section {
 section > h1 {
   padding-bottom: 0.5ch;
   border-bottom: 3px solid gray;
+  font-weight: bold;
 }
 
 .self-produced {
@@ -106,19 +110,23 @@ section > h1 {
   flex-direction: column;
 }
 
+.self-produced__text > h3 {
+  font-weight: bold;
+}
+
 @media (max-width: 600px) {
   .self-produced__text {
     max-width: 100%;
   }
   .self-produced__text > h3 {
     text-align: center;
+    font-weight: bold;
   }
 }
 
 .self-produced > img {
   width: 150px;
   height: 150px;
-  aspect-ratio: 1 / 1;
   border-radius: 50%;
 }
 
@@ -131,14 +139,24 @@ section > h1 {
 }
 
 .profiel__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+}
+
+.profiel__card > * {
+  margin-bottom: 0;
+}
+
+.profiel__card > * + * {
+  margin-top: var(--s-1);
+}
+
+.profiel__card > h3 {
+  font-weight: bold;
 }
 
 .profiel__card > img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 footer {
