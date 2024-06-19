@@ -5,12 +5,6 @@
  * Distributed under terms of the MIT license.
  */
 
-/* Font を変更 */
-/* Noto Snas Helvetica Arial sans-serif Apple Color Emoji Segoe UI Emoji */
-/**/
-/* レジュメの色 */
-/* #384152 */
-
 :root {
   --ratio: 1.5;
   --s0: 1rem;
@@ -31,6 +25,9 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 /* コンテンツの幅は960pxで、左右に4%の余白を持たせる。 */
@@ -127,7 +124,6 @@ section > h1 {
 
 .profiel {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(100px, 300px)); */
   grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
   justify-content: center;
   width: 100%;
@@ -148,4 +144,5 @@ section > h1 {
 footer {
   display: flex;
   justify-content: center;
+  font-weight: 100;
 }
