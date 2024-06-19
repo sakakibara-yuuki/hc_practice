@@ -11,7 +11,7 @@
 /* レジュメの色 */
 /* #384152 */
 
-:root{
+:root {
   --ratio: 1.5;
   --s0: 1rem;
   --s-5: calc(var(--s0) * pow(var(--ratio), -5));
@@ -102,7 +102,6 @@ section > h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 
 .self-produced__text {
   max-width: calc(100% - 150px);
