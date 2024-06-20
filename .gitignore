@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+todo.md
+hoge.html
 package.json
 node_modules
 package-lock.json
