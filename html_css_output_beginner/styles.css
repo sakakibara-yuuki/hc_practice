@@ -23,17 +23,19 @@
   --main-visual-height: 600px;
 }
 
-
 * {
   box-sizing: border-box;
 }
 
-h1, h2, h3, p, a{
+h1,
+h2,
+h3,
+p,
+a {
   font-family: "Noto Sans JP", sans-serif;
   font-style: normal;
   font-weight: 400;
 }
-
 
 /* header img main footer */
 /* コンテンツの幅は960pxで、左右に4%の余白を持たせる。 */
@@ -168,7 +170,6 @@ section > h1 {
   align-items: stretch;
 }
 
-
 .profiel__card h3 {
   font-weight: bold;
 }
@@ -177,7 +178,7 @@ section > h1 {
   margin: 0;
 }
 
-.profiel__card  img {
+.profiel__card img {
   margin-top: var(--s-2);
   width: 100%;
   aspect-ratio: 16 / 9;
