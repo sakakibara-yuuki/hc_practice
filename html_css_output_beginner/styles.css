@@ -38,12 +38,18 @@ a {
 }
 
 /* header img main footer */
-/* コンテンツの幅は960pxで、左右に4%の余白を持たせる。 */
+/* コンテンツの幅は960px */
 .container {
   display: grid;
-  grid-template-columns: 4% auto 4%;
+  grid-template-columns: auto minmax(auto, 960px) auto;
   grid-template-rows: auto var(--main-visual-height) auto 100px;
   box-sizing: content-box;
+}
+
+/* 左右に4%の余白を持たせる。 */
+.container > * {
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 /* 本当はgapを使いたかった。 */
@@ -91,11 +97,19 @@ nav {
 
 /* stackを使った影響で、main-visualのmargin-topを0にする。 */
 .main-visual {
+  padding-left: 0;
+  padding-right: 0;
   margin-top: 0;
   grid-column: 1 / 4;
   grid-row: 2;
   height: var(--main-visual-height);
   min-width: 100%;
+}
+
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main {
