@@ -1,0 +1,213 @@
+/*
+ * styles.css
+ * Copyright (C) 2024 sakakibara
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+:root {
+  --ratio: 1.5;
+  --s0: 1rem;
+  --s-5: calc(var(--s0) * pow(var(--ratio), -5));
+  --s-4: calc(var(--s0) * pow(var(--ratio), -4));
+  --s-3: calc(var(--s0) * pow(var(--ratio), -3));
+  --s-2: calc(var(--s0) * pow(var(--ratio), -2));
+  --s-1: calc(var(--s0) * pow(var(--ratio), -1));
+  --s1: calc(var(--s0) * pow(var(--ratio), 1));
+  --s2: calc(var(--s0) * pow(var(--ratio), 2));
+  --s3: calc(var(--s0) * pow(var(--ratio), 3));
+  --s4: calc(var(--s0) * pow(var(--ratio), 4));
+  --s5: calc(var(--s0) * pow(var(--ratio), 5));
+  --break-point: 600px;
+  --max-width: 960px;
+  --main-visual-height: 600px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* header img main footer */
+/* コンテンツの幅は960px */
+.container {
+  display: grid;
+  grid-template-columns: auto minmax(auto, 960px) auto;
+  grid-template-rows: auto var(--main-visual-height) auto 100px;
+  box-sizing: content-box;
+}
+
+/* 左右に4%の余白を持たせる。 */
+.container > * {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+/* 本当はgapを使いたかった。 */
+.container > * + * {
+  margin-top: var(--s2);
+}
+
+header {
+  grid-column: 2;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+}
+
+.nav__resume {
+  background-color: #384152;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.nav__links-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+
+.nav__links-list li {
+  margin-left: var(--s-1);
+}
+
+.nav__links-list li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav__links-list li > a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+/* stackを使った影響で、main-visualのmargin-topを0にする。 */
+.main-visual {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  grid-column: 1 / 4;
+  grid-row: 2;
+  height: var(--main-visual-height);
+  min-width: 100%;
+}
+
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  grid-column: 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: var(--s3);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section > h1 {
+  padding-bottom: 0.5ch;
+  border-bottom: 3px solid gray;
+  font-weight: bold;
+}
+
+.self-produced {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.self-produced__text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.self-produced__text > h3 {
+  font-weight: bold;
+}
+
+.self-produced > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .self-produced {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .self-produced__text {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.profiel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .profiel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.profiel__card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.profiel__card h3 {
+  font-weight: bold;
+}
+
+.profiel__card figure {
+  margin: 0;
+}
+
+.profiel__card img {
+  margin-top: var(--s-2);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+footer {
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+}
